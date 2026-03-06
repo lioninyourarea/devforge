@@ -6,3 +6,38 @@
 <body>
 </body>
 </html>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const button = document.querySelector("button");
+  const textarea = document.querySelector("textarea");
+
+  button.addEventListener("click", function () {
+    
+    const idea = textarea.value.trim();
+
+    if (idea === "") {
+      alert("Please write your idea first.");
+      return;
+    }
+
+    const resultBox = document.createElement("div");
+    resultBox.style.marginTop = "20px";
+    resultBox.style.padding = "15px";
+    resultBox.style.background = "#111";
+    resultBox.style.borderRadius = "10px";
+    resultBox.style.color = "white";
+
+    resultBox.innerHTML =
+      "<b>Idea Analysis</b><br><br>" +
+      "• Target users: People interested in your product idea.<br>" +
+      "• Features to add: product pages, checkout, reviews.<br>" +
+      "• Improvements: mobile design, SEO, faster loading.<br>" +
+      "• Avoid: too many features at start.";
+
+    textarea.parentNode.appendChild(resultBox);
+
+  });
+
+});
+</script>
